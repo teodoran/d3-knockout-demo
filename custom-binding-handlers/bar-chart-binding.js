@@ -5,8 +5,10 @@ ko.bindingHandlers.barChart = {
         "use strict";
 
         var margin = {top: 20, right: 20, bottom: 30, left: 40},
-            width = 960 - margin.left - margin.right,
-            height = 500 - margin.top - margin.bottom,
+            elementWidth = parseInt(d3.select(element).style("width"), 10),
+            elementHeight = parseInt(d3.select(element).style("height"), 10),
+            width = elementWidth - margin.left - margin.right,
+            height = elementHeight - margin.top - margin.bottom,
 
             data = ko.unwrap(valueAccessor()),
 
@@ -33,8 +35,12 @@ ko.bindingHandlers.barChart = {
         "use strict";
 
         var margin = {top: 20, right: 20, bottom: 30, left: 40},
-            width = 960 - margin.left - margin.right,
-            height = 500 - margin.top - margin.bottom,
+
+            elementWidth = parseInt(d3.select(element).style("width"), 10),
+            elementHeight = parseInt(d3.select(element).style("height"), 10),
+
+            width = elementWidth - margin.left - margin.right,
+            height = elementHeight - margin.top - margin.bottom,
             animationDuration = 750,
 
             data = ko.unwrap(valueAccessor()),

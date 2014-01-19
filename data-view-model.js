@@ -18,12 +18,24 @@ var D3KD = this.D3KD || {};
                 ];
             },
 
+            randomBros = function () {
+                return [
+                    { name: "Kiro", value: Math.random() },
+                    { name: "Steffen", value: Math.random() },
+                    { name: "Teodor", value: Math.random() },
+                    { name: "Peter", value: Math.random() }
+                ];
+            },
+
             updateBarChartData = function() {
                 self.barChartData(randomPonies());
             };
 
 
         self.barChartData = ko.observable(randomPonies());
+
+        self.barChartSmall1 = ko.observable(randomPonies());
+        self.barChartSmall2 = ko.observable(randomPonies());
 
         setInterval(updateBarChartData, 2000);
     };

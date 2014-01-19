@@ -17,6 +17,14 @@
     shape-rendering: crispEdges;
 }
 
-.x.axis path {
-    display: none;
+.area {
+  fill: steelblue;
+}
+
+.bigChart {
+    height: 500px;
+}
+
+.smallChart {
+    height: 300px;
 }
