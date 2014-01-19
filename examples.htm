@@ -2,12 +2,23 @@
 <html>
 <head>
     <title>d3-knockout-demo</title>
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet" media="screen">
 
-    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-    <script src="http://knockoutjs.com/downloads/knockout-3.0.0.js" charset="utf-8"></script>
+    <script type='text/javascript' src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script type='text/javascript' src="http://knockoutjs.com/downloads/knockout-3.0.0.js" charset="utf-8"></script>
+
+    <link rel="stylesheet" href="style/bar-chart-demo.css">
 </head>
 
 <body>
-    <h1>Example page</h1>
+    <div class="container">
+        <h1>D3 knockout demo</h1>
+
+        <div data-bind='barChart: barChartData'></div>
+
+        <script type='text/javascript' src='data-view-model.js'></script>
+        <script type='text/javascript' src='custom-binding-handlers/bar-chart-binding.js'></script>
+        <script type='text/javascript' src='app.js'></script>
+    </div>
 </body>
 </html>
