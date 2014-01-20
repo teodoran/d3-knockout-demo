@@ -15,10 +15,27 @@
     <div class="container">
         <h1>D3 knockout demo</h1>
 
+        <!-- ElectionChart! -->
+        <div class="row">
+            <div class="col-lg-12 bigChart" data-bind="lineChart: lineChartData"></div>
+        </div>
+
+        <p>
+            text
+        </p>
+
+        <!-- ElectionChart! -->
+        <div class="row">
+            <div class="col-md-12 smallChart" data-bind="electionChart: electionData"></div>
+        </div>
+
+        <!-- ElectionChart! -->
+
         <p>
             The first example shows use of the basic <a href="http://bl.ocks.org/mbostock/3885304">Bar Chart</a> example. The example is implemented as a <a href="http://knockoutjs.com/documentation/custom-bindings.html">custom binding</a>. The binding automatically scales the chart to the containing element, and keeps track of changes in the underlying data.
         </p>
 
+        <!-- BarChart! -->
         <div class="row">
             <div class="col-md-12 bigChart" data-bind='barChart: barChartData'></div>
         </div>
@@ -27,15 +44,17 @@
             <div class="col-md-6 smallChart" data-bind='barChart: barChartSmall1'></div>
             <div class="col-md-6 smallChart" data-bind='barChart: barChartSmall2'></div>
         </div>
+        <!-- BarChart! -->
 
         <p>
             The next example is the good old <a href="http://bl.ocks.org/mbostock/3883195">Area Chart</a>.
         </p>
 
+        <!-- AREAchart! -->
         <div class="row">
             <div class="col-md-12 bigChart" data-bind='areaChart: barChartData'></div>
         </div>
-
+        <!-- AREAchart! -->
 
     <footer>
         <p class="pull-right"><a href="https://github.com/teodoran/blog-photo">GitHub</a></p>
@@ -51,6 +70,8 @@
     <script type='text/javascript' src='data-view-model.js'></script>
     <script type='text/javascript' src='custom-binding-handlers/bar-chart-binding.js'></script>
     <script type='text/javascript' src='custom-binding-handlers/area-chart-binding.js'></script>
+    <script type='text/javascript' src='custom-binding-handlers/election-binding.js'></script>
+    <script type='text/javascript' src='custom-binding-handlers/line-chart-binding.js'></script>
     <script type='text/javascript' src='app.js'></script>
 </body>
 </html>

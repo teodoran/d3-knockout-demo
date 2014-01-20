@@ -53,7 +53,6 @@ ko.bindingHandlers.areaChart = {
         {date: parseDate("16-Apr-12"), close: 280.13}
         ];
 
-
         x.domain(d3.extent(data, function(d) { return d.date; }));
         y.domain([0, d3.max(data, function(d) { return d.close; })]);
 
