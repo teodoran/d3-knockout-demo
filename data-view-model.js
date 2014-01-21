@@ -18,38 +18,38 @@ var D3KD = this.D3KD || {};
                 ];
             },
 
+            lineDataPoint = function () {
+                return {
+                    date: new Date(),
+                    close: Math.random() * 1000 + 500
+                };
+            },
+
             updateBarChartData = function() {
                 self.barChartData(randomPonies());
             },
 
-            updateAreaChartData = function () {
-                console.log(self.areaChartData()[0]);
+            updateElectionData = function () {
+                return self.electionData(Math.random() * 100);
+            },
+
+
+            updateLineChartData = function () {
+                return self.lineChartData.push(lineDataPoint());
             };
 
+        self.electionData = ko.observable(37);
+
+        self.lineChartData = ko.observableArray([
+            lineDataPoint()
+        ]);
 
         self.barChartData = ko.observable(randomPonies());
         self.barChartSmall1 = ko.observable(randomPonies());
         self.barChartSmall2 = ko.observable(randomPonies());
 
-        self.areaChartData = ko.observableArray([
-            {x: 1, y: 100},
-            {x: 2, y: 130},
-            {x: 3, y: 140},
-            {x: 4, y: 150},
-            {x: 5, y: 135},
-            {x: 6, y: 125},
-            {x: 7, y: 110},
-            {x: 8, y: 100},
-            {x: 9, y: 80},
-            {x: 10, y: 70},
-            {x: 11, y: 50},
-            {x: 12, y: 20}
-        ]);
-
-        updateAreaChartData();
-
-        console.log(self.areaChartData()[self.areaChartData().length - 1]);
-
-        setInterval(updateBarChartData, 2000);
+        setInterval(updateBarChartData, 2876);
+        setInterval(updateElectionData, 3333);
+        setInterval(updateLineChartData, 1500);
     };
 }(D3KD));

@@ -1,3 +1,27 @@
+.bigChart {
+    height: 500px;
+}
+
+.smallChart {
+    height: 300px;
+}
+
+.miniChart {
+    height: 40px;
+}
+
+.vspace {
+    height: 15px;
+}
+
+.election {
+    background-color: steelblue;
+}
+
+.republican {
+    fill: brown;
+}
+
 .bar {
     fill: steelblue;
 }
@@ -21,10 +45,9 @@
   fill: steelblue;
 }
 
-.bigChart {
-    height: 500px;
-}
-
-.smallChart {
-    height: 300px;
+/* line chart specifics.*/
+.line {
+    fill: none;
+    stroke: steelblue;
+    stroke-width: 1.5px;
 }
