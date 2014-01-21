@@ -42,6 +42,8 @@ ko.bindingHandlers.lineChart = {
             width = elementWidth - margin.left - margin.right,
             height = elementHeight - margin.top - margin.bottom,
 
+            animationDuration = 750,
+
             x = d3.time.scale()
                 .range([0, width]),
 
@@ -69,18 +71,18 @@ ko.bindingHandlers.lineChart = {
 
         svg.select("g.x.axis")
             .transition()
-            .duration(750)
+            .duration(animationDuration)
             .call(xAxis);
 
         svg.select("g.y.axis")
             .transition()
-            .duration(750)
+            .duration(animationDuration)
             .call(yAxis);
 
         svg.select("path.line.data")
             .datum(data)
             .transition()
-            .duration(750)
+            .duration(animationDuration)
             .attr("d", line);
     }
 };

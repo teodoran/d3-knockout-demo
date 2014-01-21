@@ -7,6 +7,36 @@ var D3KD = this.D3KD || {};
     namespace.dataViewModel = function() {
         var self = this,
 
+            updateElectionData = function () {
+                return self.electionData(Math.random() * 100);
+            },
+
+            stockChange = function (previousValue) {
+                var volatility = 0.7,
+                    bias = 1.5,
+                    change = bias * volatility * Math.random();
+
+                if (change > volatility || previousValue - change <= 0.1) {
+                    return previousValue + change;
+                }
+
+                return previousValue - change;
+            },
+
+            lineDataPoint = function (previousValue) {
+                return {
+                    date: new Date(),
+                    close: stockChange(previousValue || Math.random() * 10)
+                };
+            },
+
+            updateLineChartData = function () {
+                var previousValue = self.lineChartData()[
+                    self.lineChartData().length - 1
+                ].close;
+                return self.lineChartData.push(lineDataPoint(previousValue));
+            },
+
             randomPonies = function () {
                 return [
                     { name: "Rainbow Dash", value: Math.random() },
@@ -16,26 +46,6 @@ var D3KD = this.D3KD || {};
                     { name: "Applejack", value: Math.random() },
                     { name: "Twilight Sparkle", value: Math.random() }
                 ];
-            },
-
-            lineDataPoint = function () {
-                return {
-                    date: new Date(),
-                    close: Math.random() * 1000 + 500
-                };
-            },
-
-            updateBarChartData = function() {
-                self.barChartData(randomPonies());
-            },
-
-            updateElectionData = function () {
-                return self.electionData(Math.random() * 100);
-            },
-
-
-            updateLineChartData = function () {
-                return self.lineChartData.push(lineDataPoint());
             };
 
         self.electionData = ko.observable(37);
@@ -48,8 +58,22 @@ var D3KD = this.D3KD || {};
         self.barChartSmall1 = ko.observable(randomPonies());
         self.barChartSmall2 = ko.observable(randomPonies());
 
-        setInterval(updateBarChartData, 2876);
-        setInterval(updateElectionData, 3333);
-        setInterval(updateLineChartData, 1500);
+        setInterval(updateLineChartData, 1000);
+
+        setInterval(function () {
+            self.electionData(Math.random() * 100);
+        }, 3333);
+
+        setInterval(function () {
+            self.barChartData(randomPonies());
+        }, 3456);
+
+        setInterval(function () {
+            self.barChartSmall1(randomPonies());
+        }, 2567);
+
+        setInterval(function () {
+            self.barChartSmall2(randomPonies());
+        }, 2222);
     };
 }(D3KD));
