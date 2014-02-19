@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>d3-knockout-demo</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+
+    <script type='text/javascript' src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script type='text/javascript' src="http://knockoutjs.com/downloads/knockout-3.0.0.js" charset="utf-8"></script>
+
+    <link rel="stylesheet" href="style/bootstrap.min.css">
+    <link rel="stylesheet" href="style/bar-chart-demo.css">
+    <link rel="stylesheet" href="style/gh-fork-ribbon.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="github-fork-ribbon-wrapper right">
+            <div class="github-fork-ribbon">
+                <a href="https://github.com/teodoran/d3-knockout-demo">Fork me on GitHub</a>
+            </div>
+        </div>
+
+        <h1>D3 knockout demo</h1>
+        <hr class="featurette-divider">
+
+        <div class="vspace"></div>
+
+        <h3>Bar Chart</h3>
+        <p>
+            Finally we have the basic <a href="http://bl.ocks.org/mbostock/3885304">Bar Chart</a> example.
+        </p>
+
+        <div class="row">
+            <!-- This line is adds the chart to the html -->
+            <div class="col-md-12 bigChart" data-bind='barChart: barChartData'></div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <footer>
+            <p class="pull-right"><a href="https://github.com/teodoran/blog-photo">GitHub</a></p>
+            <p>
+                KodeKollektivet.no &middot;
+                <a href="http://folk.ntnu.no/steffenp/">Steffen Pöhner</a> &middot;
+                <a href="https://twitter.com/magnuskiro">Magnus Kirø</a> &middot;
+                <a href="http://folk.ntnu.no/teodoran/">Teodor Elstad</a>
+            </p>
+        </footer>
+    </div>
+
+    <!-- Add the javascript files to the html -->
+    <script type='text/javascript' src='view-models/bar-data-view-model.js'></script>
+    <script type='text/javascript' src='custom-binding-handlers/bar-chart-binding.js'></script>
+    <script type='text/javascript' src='app.js'></script>
+</body>
+</html>

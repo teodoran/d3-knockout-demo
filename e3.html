@@ -23,21 +23,6 @@
         <h1>D3 knockout demo</h1>
         <hr class="featurette-divider">
 
-        <p>
-            This demo shows a way to use <a href="http://d3js.org/">D3</a> with <a href="http://knockoutjs.com/">Knockout</a>, in order to create reusable charts, that automatically updates it's data from Knockout observables.
-        </p>
-        <p>
-            The first example is a basic "election meter" type chart. The example is implemented as a <a href="http://knockoutjs.com/documentation/custom-bindings.html">custom binding</a>.
-        </p>
-
-        <h3>Red vs. Blue</h3>
-        
-        <div class="row">
-            <div class="col-md-12 miniChart" data-bind="electionChart: electionData"></div>
-        </div>
-
-        <div class="vspace"></div>
-
         <h3>Line Chart</h3>
         <p>
             The second example is the good old <a href="http://bl.ocks.org/mbostock/3883245">Line Chart</a>. It automatically updates with random values from the viewmodel.
@@ -46,38 +31,6 @@
         <div class="row">
             <div class="col-lg-12 bigChart" data-bind="lineChart: lineChartData"></div>
         </div>
-
-        <div class="vspace"></div>
-
-        <h3>Bar Chart</h3>
-        <p>
-            Finally we have the basic <a href="http://bl.ocks.org/mbostock/3885304">Bar Chart</a> example.
-        </p>
-
-        <div class="row">
-            <div class="col-md-12 bigChart" data-bind='barChart: barChartData'></div>
-        </div>
-
-        <p>
-            Note how the chart automatically scales to the containing element size.
-        </p>
-
-        <div class="row">
-            <div class="col-md-6 smallChart" data-bind='barChart: barChartSmall1'></div>
-            <div class="col-md-6 smallChart" data-bind='barChart: barChartSmall2'></div>
-        </div>
-
-        <div class="vspace"></div>
-
-        <p>
-            The source code for this demo can be found at <a href="https://github.com/teodoran/d3-knockout-demo">GitHub</a>.
-        </p>
-
-        <p>
-            Good luck on on using D3 and Knockout to make your own data driven sites!
-        </p>
-
-        <div class="vspace"></div>
 
         <hr class="featurette-divider">
 

@@ -33,51 +33,9 @@
         <h3>Red vs. Blue</h3>
         
         <div class="row">
+            <!-- This line is adds the chart to the html -->
             <div class="col-md-12 miniChart" data-bind="electionChart: electionData"></div>
         </div>
-
-        <div class="vspace"></div>
-
-        <h3>Line Chart</h3>
-        <p>
-            The second example is the good old <a href="http://bl.ocks.org/mbostock/3883245">Line Chart</a>. It automatically updates with random values from the viewmodel.
-        </p>
-
-        <div class="row">
-            <div class="col-lg-12 bigChart" data-bind="lineChart: lineChartData"></div>
-        </div>
-
-        <div class="vspace"></div>
-
-        <h3>Bar Chart</h3>
-        <p>
-            Finally we have the basic <a href="http://bl.ocks.org/mbostock/3885304">Bar Chart</a> example.
-        </p>
-
-        <div class="row">
-            <div class="col-md-12 bigChart" data-bind='barChart: barChartData'></div>
-        </div>
-
-        <p>
-            Note how the chart automatically scales to the containing element size.
-        </p>
-
-        <div class="row">
-            <div class="col-md-6 smallChart" data-bind='barChart: barChartSmall1'></div>
-            <div class="col-md-6 smallChart" data-bind='barChart: barChartSmall2'></div>
-        </div>
-
-        <div class="vspace"></div>
-
-        <p>
-            The source code for this demo can be found at <a href="https://github.com/teodoran/d3-knockout-demo">GitHub</a>.
-        </p>
-
-        <p>
-            Good luck on on using D3 and Knockout to make your own data driven sites!
-        </p>
-
-        <div class="vspace"></div>
 
         <hr class="featurette-divider">
 
@@ -92,10 +50,9 @@
         </footer>
     </div>
 
-    <script type='text/javascript' src='view-models/data-view-model.js'></script>
-    <script type='text/javascript' src='custom-binding-handlers/bar-chart-binding.js'></script>
+    <!-- Add the javascript files to the html -->
+    <script type='text/javascript' src='view-models/election-data-view-model.js'></script>
     <script type='text/javascript' src='custom-binding-handlers/election-binding.js'></script>
-    <script type='text/javascript' src='custom-binding-handlers/line-chart-binding.js'></script>
     <script type='text/javascript' src='app.js'></script>
 </body>
 </html>

@@ -10,11 +10,11 @@ ko.bindingHandlers.lineChart = {
             width = elementWidth - margin.left - margin.right,
             height = elementHeight - margin.top - margin.bottom,
 
-            svg = d3.select(element).append("svg")
-                .attr("width", width + margin.left + margin.right)
-                .attr("height", height + margin.top + margin.bottom)
-                .append("g")
-                .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+        svg = d3.select(element).append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
         svg.append("g")
             .attr("class", "x axis")
@@ -42,6 +42,7 @@ ko.bindingHandlers.lineChart = {
             width = elementWidth - margin.left - margin.right,
             height = elementHeight - margin.top - margin.bottom,
 
+        // set the time it takes for the animation to take.
             animationDuration = 750,
 
             x = d3.time.scale()
@@ -58,14 +59,17 @@ ko.bindingHandlers.lineChart = {
                 .scale(y)
                 .orient("left"),
 
+            // define the graph line
             line = d3.svg.line()
                 .x(function(d) { return x(d.date); })
                 .y(function(d) { return y(d.close); }),
 
             svg = d3.select(element).select("svg g"),
 
+            // parse data from the data-view-model
             data = ko.unwrap(valueAccessor());
 
+        // define the domain of the graph. max and min of the dimensions
         x.domain(d3.extent(data, function(d) { return d.date; }));
         y.domain([0, d3.max(data, function(d) { return d.close; })]);
 
@@ -79,6 +83,7 @@ ko.bindingHandlers.lineChart = {
             .duration(animationDuration)
             .call(yAxis);
 
+        // add the line to the canvas
         svg.select("path.line.data")
             .datum(data)
             .transition()
